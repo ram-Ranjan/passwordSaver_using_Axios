@@ -1,14 +1,13 @@
 # Personal Password Manager
 
-This project is a simple Personal Password Manager web application that allows users to save, edit, and delete passwords securely. It also includes a search functionality to filter passwords based on email addresses.
+A simple web application to manage your passwords securely. Features include adding, editing, deleting, and searching passwords.
 
 ## Features
 
-- Save new passwords
+- Add new passwords
 - Edit existing passwords
 - Delete passwords
 - Search passwords by email
-- Secure password handling
 
 ## Technologies Used
 
@@ -21,16 +20,7 @@ This project is a simple Personal Password Manager web application that allows u
 
 ## Getting Started
 
-Follow these instructions to get a copy of the project up and running on your local machine.
-
-### Prerequisites
-
-- A modern web browser
-- Internet connection
-
-### Installation
-
-1. Clone the repository to your local machine:
+1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/password-manager.git
    ```
@@ -38,31 +28,14 @@ Follow these instructions to get a copy of the project up and running on your lo
    ```bash
    cd password-manager
    ```
-3. Open the `index.html` file in your web browser.
+3. Open `index.html` in a web browser.
 
 ## Usage
 
-### Adding a New Password
-
-1. Fill in the email and password fields in the form.
-2. Click the "Save" button.
-3. The password will be saved and displayed in the table below.
-
-### Editing a Password
-
-1. Click the "Edit" button next to the password you want to edit.
-2. The email and password fields will be populated with the selected password's details.
-3. Modify the details as needed and click "Save" to update the password.
-
-### Deleting a Password
-
-1. Click the "Delete" button next to the password you want to remove.
-2. The password will be deleted from the list.
-
-### Searching Passwords
-
-1. Enter the email or part of the email in the search bar above the table.
-2. The table will dynamically filter and display passwords that match the search term.
+1. **Add Password**: Fill in the email and password fields, then click "Save".
+2. **Edit Password**: Click "Edit", modify the details, and click "Save".
+3. **Delete Password**: Click "Delete".
+4. **Search Passwords**: Enter an email in the search bar to filter results.
 
 ## File Structure
 
@@ -71,46 +44,21 @@ password-manager/
 │
 ├── index.html           # Main HTML file
 ├── style.css            # Custom CSS file
-└── script.js            # JavaScript file for handling functionality
+└── script.js            # JavaScript file for functionality
 ```
 
-## Code Explanation
+## API
 
-### HTML (`index.html`)
-
-- Contains the structure of the web application, including the form for adding/editing passwords, the table for displaying passwords, and the search input.
-
-### CSS (`style.css`)
-
-- Custom styles for the application, including table styling, form layout, and button designs.
-
-### JavaScript (`script.js`)
-
-- Handles fetching, displaying, adding, editing, updating, and deleting passwords using Axios for API requests.
-- Implements search functionality to filter passwords based on email input.
-
-### API
-
-- Uses CRUD API provided by [crudcrud.com](https://crudcrud.com) for storing passwords. Replace the `apiUrl` variable with your unique endpoint URL from `crudcrud.com`.
-
-## Acknowledgements
-
-- [Bootstrap](https://getbootstrap.com/)
-- [Axios](https://axios-http.com/)
-- [CRUD API (crudcrud.com)](https://crudcrud.com)
+- Uses [crudcrud.com](https://crudcrud.com) for storing passwords. Replace `apiUrl` in `script.js` with your endpoint URL.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Contributing
 
 1. Fork the repository.
 2. Create your feature branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -am 'Add some feature'`).
+3. Commit your changes (`git commit -am 'Add feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
-5. Create a new Pull Request.
-
----
-
-Feel free to customize this README file further based on your project's specific details and requirements.
+5. Create a Pull Request.
