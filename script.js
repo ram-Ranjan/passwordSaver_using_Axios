@@ -6,18 +6,18 @@ const fetchPasswords = async () => {
     try {
         const response = await axios.get(apiUrl);
         passwords = response.data;
-        displayPasswords();
+        displayPasswords(passwords);
     } catch (error) {
         console.error('Error fetching passwords:', error);
     }
 };
 
 // Display passwords in the table
-const displayPasswords = () => {
+const displayPasswords = (passwordsToDisplay) => {
     const passwordList = document.getElementById('passwordList');
     passwordList.innerHTML = '';
 
-    passwords.forEach(password => {
+    passwordsToDisplay.forEach(password => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${password.email}</td>
@@ -52,10 +52,7 @@ const editPassword = async (id) => {
     if (password) {
         document.getElementById('email').value = password.email;
         document.getElementById('password').value = password.password;
-
-        axios.delete(`${apiUrl}/${id}`)
-        .then()
-        .catch(err => console.log(err));
+        document.getElementById('passwordForm').dataset.id = id;
     }
 };
 
@@ -101,6 +98,13 @@ passwordForm.addEventListener('submit', async (e) => {
     } else {
         await addPassword(email, password);
     }
+});
+
+// Event listener for search input
+document.getElementById('search').addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredPasswords = passwords.filter(password => password.email.toLowerCase().includes(searchTerm));
+    displayPasswords(filteredPasswords);
 });
 
 // Fetch passwords on page load
